@@ -39,9 +39,9 @@ class Buffer {
 }
 
 class Debounce {
-  constructor(enabled = true) {
+  constructor() {
     this.timeoutId = null;
-    this.enabled = enabled;
+    this.enabled = DEBOUNCE_MS > 0;
   }
 
   exec(call) {
@@ -66,7 +66,7 @@ class Tracker {
     this.buffer = new Buffer();
     this.lastSendMs = null;
     this.isInProgress = false;
-    this.debounce = new Debounce(true);
+    this.debounce = new Debounce();
   }
 
   track(event, ...tags) {
