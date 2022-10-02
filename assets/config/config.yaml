@@ -1,0 +1,7 @@
+http:
+  host: 'localhost'
+  port:
+    front: 8000
+    back: 8001
+api:
+  longCall: 0
